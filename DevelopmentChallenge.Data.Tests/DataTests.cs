@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DevelopmentChallenge.Data.Classes;
 using DevelopmentChallenge.Data.Interfaces;
 using DevelopmentChallenge.Data.Localization;
+using DevelopmentChallenge.Data.Shapes;
 using NUnit.Framework;
 
 namespace DevelopmentChallenge.Data.Tests
@@ -99,6 +100,18 @@ namespace DevelopmentChallenge.Data.Tests
             Assert.AreEqual(
                 "<h1>Reporte de Formas</h1>2 Cuadrados | Area 29 | Perimetro 28 <br/>2 Círculos | Area 13,01 | Perimetro 18,06 <br/>3 Triángulos | Area 49,64 | Perimetro 51,6 <br/>TOTAL:<br/>7 formas Perimetro 97,66 Area 91,65",
                 resumen);
+        }
+
+        [TestCase]
+        public void TestReportWithOneRectangleEnglish()
+        {
+            var formatter = new EnglishFormatter();
+            var generator = new ShapeReportGenerator(formatter);
+            var shapes = new List<IGeometricShape> { new Rectangle(4, 6) }; 
+
+            var report = generator.GenerateReport(shapes);
+            
+            Assert.AreEqual("<h1>Shapes report</h1>1 Rectangle | Area 24 | Perimeter 20 <br/>TOTAL:<br/>1 shapes Perimeter 20 Area 24", report);
         }
     }
 }

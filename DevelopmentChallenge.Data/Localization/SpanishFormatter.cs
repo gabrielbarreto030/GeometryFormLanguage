@@ -30,7 +30,9 @@ namespace DevelopmentChallenge.Data.Localization
             if (shape is Circle)
                 return quantity == 1 ? "Círculo" : "Círculos";
             if (shape is EquilateralTriangle)
-                return quantity == 1 ? "Triángulo" : "Triángulos";           
+                return quantity == 1 ? "Triángulo" : "Triángulos";
+            if (shape is Rectangle)
+                return quantity == 1 ? "Rectángulo" : "Rectángulos";
 
             return string.Empty;
         }

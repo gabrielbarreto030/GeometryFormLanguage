@@ -75,7 +75,9 @@ namespace DevelopmentChallenge.Data.Classes
                 case 1: 
                     return new SpanishFormatter();
                 case 2: 
-                    return new EnglishFormatter();              
+                    return new EnglishFormatter();
+                case 3:
+                    return new ItalianFormatter();
                 default:                  
                     return new EnglishFormatter(); 
             }
