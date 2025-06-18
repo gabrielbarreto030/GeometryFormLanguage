@@ -56,6 +56,7 @@
     <Compile Include="Shapes\EquilateralTriangule.cs" />
     <Compile Include="Shapes\Rectangle.cs" />
     <Compile Include="Shapes\Square.cs" />
+    <Compile Include="Shapes\Trapezoid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

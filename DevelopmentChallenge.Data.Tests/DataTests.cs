@@ -113,5 +113,17 @@ namespace DevelopmentChallenge.Data.Tests
             
             Assert.AreEqual("<h1>Shapes report</h1>1 Rectangle | Area 24 | Perimeter 20 <br/>TOTAL:<br/>1 shapes Perimeter 20 Area 24", report);
         }
+
+        [TestCase]
+        public void TestReportWithOneTrapezoidSpanish()
+        {
+            var formatter = new SpanishFormatter();
+            var generator = new ShapeReportGenerator(formatter);
+            var shapes = new List<IGeometricShape> { new Trapezoid(4, 6, 5, 3, 7) };
+
+            var report = generator.GenerateReport(shapes);
+           
+            Assert.AreEqual("<h1>Reporte de Formas</h1>1 Trapecio | Area 25 | Perimetro 20 <br/>TOTAL:<br/>1 formas Perimetro 20 Area 25", report);
+        }
     }
 }

@@ -33,6 +33,8 @@ namespace DevelopmentChallenge.Data.Localization
                 return quantity == 1 ? "Triangle" : "Triangles";
             if (shape is Rectangle)
                 return quantity == 1 ? "Rectangle" : "Rectangles";
+            if (shape is Trapezoid)
+                return quantity == 1 ? "Trapezoid" : "Trapezoids";
 
             return string.Empty; 
         }
