@@ -27,8 +27,9 @@ namespace DevelopmentChallenge.Data.Classes
         public const int Circulo = 3;
 
         public const int Castellano = 1;
-        public const int Ingles = 2;           
-      
+        public const int Ingles = 2;
+        public const int Italiano = 3;
+
         public static string Imprimir(List<FormaGeometrica> formasAntigas, int idiomaId)
         {
             var formatter = ShapeReportGenerator.GetFormatter(idiomaId); 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using DevelopmentChallenge.Data.Classes;
+using DevelopmentChallenge.Data.Interfaces;
+using DevelopmentChallenge.Data.Localization;
 using NUnit.Framework;
 
 namespace DevelopmentChallenge.Data.Tests
@@ -20,6 +22,16 @@ namespace DevelopmentChallenge.Data.Tests
         {
             Assert.AreEqual("<h1>Empty list of shapes!</h1>",
                 FormaGeometrica.Imprimir(new List<FormaGeometrica>(), 2));
+        }
+
+        [TestCase]
+        public void TestReportEmptyListItalian()
+        {           
+            var formatter = new ItalianFormatter();
+            var generator = new ShapeReportGenerator(formatter);
+            var shapes = new List<IGeometricShape>();
+            var report = generator.GenerateReport(shapes);
+            Assert.AreEqual("<h1>Elenco di forme vuoto!</h1>", report);
         }
 
         [TestCase]
